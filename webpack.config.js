@@ -29,7 +29,7 @@ export default {
 		use:["html-loader"],
 	    },
 		{
-			test:/\.(svg)$/i,
+			test:/\.(svg|jpeg)$/i,
 			type:"asset/resource",
 
 		},

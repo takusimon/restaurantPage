@@ -11,6 +11,9 @@ body {
     display:grid;
     grid-template-rows:4rem,auto,4rem;
     background-image: url("../imgs/red-background.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
     overflow: auto;
 }
 header {
@@ -55,7 +58,7 @@ nav {
     gap:2.5rem;
 }
 
-#content > div:nth-child(n + 3) {
+#content > div:nth-child(n + 3),.item {
     background-color: var(--blood-red);
     color:var(--warm-ivory);
     width:100%;
@@ -63,7 +66,26 @@ nav {
     border-radius: 10px;
     padding:2rem;
 }
+.item {
+    display:flex;
+    flex-flow:column wrap;
+    gap:1.5rem;
+}
 
+.item img {
+    align-self: flex-end;
+    border-radius: 10px;
+}
+.item-description {
+    align-self: center;
+    text-align: center;
+    font-size:1.2rem;
+}
+.item-price {
+    font-weight:bold;
+    font-size:1.5rem;
+    align-self: flex-start;
+}
 #heading-container {
     background-image: url("../imgs/scroll.png");
     background-size: 100%;
@@ -84,6 +106,10 @@ nav {
     border-radius: 10px;
     color:var(--champagne-gold);
     padding:10px;
+}
+
+.menu {
+    left:44%;
 }
 
 #star-main-container {
