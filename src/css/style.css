@@ -35,11 +35,15 @@ nav {
     color: var(--blood-red);
     
 }
+.header-nav-btn:focus {
+    background-color: var(--champagne-gold);
+    outline:none;
+}
 
 #content {
     margin-top:2rem;
     padding:2rem;
-    width:40vw;
+    width:850px;
     height:auto;
     border-radius: 20px;
     background-color: var(--champagne-gold);
@@ -54,7 +58,10 @@ nav {
 #content > div:nth-child(n + 3) {
     background-color: var(--blood-red);
     color:var(--warm-ivory);
-    width:70%;
+    width:100%;
+    border:10px solid var(--antique-gold);
+    border-radius: 10px;
+    padding:2rem;
 }
 
 #heading-container {
@@ -70,7 +77,63 @@ nav {
 
  h1 {
     position:absolute;
-    top:40%;
+    top:35%;
     overflow:wrap;
-    left:15%;
+    left:19%;
+    background:var(--burgundy);
+    border-radius: 10px;
+    color:var(--champagne-gold);
+    padding:10px;
 }
+
+#star-main-container {
+    width:80%;
+    height:auto;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap:1rem;
+}
+#star-sub-container {
+    display: flex;
+    gap:2rem;
+}
+
+#star-sub-container img {
+    width:120px;
+}
+
+#star-main-container p {
+    font-weight: bold;
+    font-size:2rem;
+}
+
+.achievement-message {
+    font-size:1.5rem;
+    text-align: center;
+}
+.message-author,.heading {
+    font-size:1.5rem;
+    font-weight: bold;
+    margin-top:1rem;
+
+}
+
+#hours-main-container,#location-container {
+    display:flex;
+    flex-flow: column;
+}
+
+#hours-main-container .heading, #location-container .heading {
+    align-self: flex-start;
+}
+
+#hours-sub-container,#location-container p:last-child {
+    align-self: center;
+    display:flex;
+    flex-flow:column;
+    gap:1rem;
+    font-weight: bold;
+}
+
+

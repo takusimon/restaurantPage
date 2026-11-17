@@ -27,7 +27,7 @@ export function homePage(){
 
    
     const earningYear = document.createElement("p");
-    earningYear.textContent = "Since 2077";
+    earningYear.textContent = "2077";
 
     starSubContainer.append(makeStar(),makeStar(),makeStar());
     starMainContainer.append(starSubContainer,earningYear);
@@ -56,14 +56,16 @@ export function homePage(){
         hoursOpen.textContent = `${day}: 6pm - ${6 + hours}pm`;
         return hoursOpen;
     }
-    const hoursContainer = document.createElement("div");
-    hoursContainer.setAttribute("id","hours-container");
+
+    const hoursMainContainer = document.createElement("div");
+    hoursMainContainer.setAttribute("id","hours-main-container");
+    const hoursSubContainer = document.createElement("div");
+    hoursSubContainer.setAttribute("id","hours-sub-container");
     const hoursHeading = document.createElement("p");
     hoursHeading.classList.add("heading");
     hoursHeading.textContent = "Hours";
 
-    hoursContainer.append(
-        hoursHeading,
+    hoursSubContainer.append(
         makeHours("Mon",4),
         makeHours("Tues",4),
         makeHours("Wed",5),
@@ -73,6 +75,7 @@ export function homePage(){
         makeHours("Sun",2),
     )
 
+    hoursMainContainer.append(hoursHeading,hoursSubContainer);
     //Location Section
     const locationContainer = document.createElement("div");
     locationContainer.setAttribute("id","location-container");
@@ -90,6 +93,6 @@ export function homePage(){
         headingContainer,
         starMainContainer,
         messageContainer,
-        hoursContainer,
+        hoursMainContainer,
         locationContainer);
  }
