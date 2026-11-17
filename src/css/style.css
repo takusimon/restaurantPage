@@ -1,0 +1,76 @@
+:root {
+    --blood-red: #8A0303;
+    --deep-crimson: #4A0008;
+    --midnight-black:#0B0608;
+    --burgundy:#650D20;
+    --antique-gold:#C99A53;
+    --champagne-gold:#F0C88A;
+    --warm-ivory:#F7E9D5;
+}
+body {
+    display:grid;
+    grid-template-rows:4rem,auto,4rem;
+    background-image: url("../imgs/red-background.png");
+    overflow: auto;
+}
+header {
+    background-color: var(--deep-crimson);
+    display:flex;
+    justify-content: center;
+    height:4rem;
+}
+nav {
+    display: flex;
+    gap:1rem;
+    align-items: flex-end;
+}
+
+.header-nav-btn {
+    border-bottom: none;
+    border:0;
+    border-radius: 10px 10px 0 0;
+    height: 5ch;
+    width:10ch;
+    background-color: var(--antique-gold);
+    color: var(--blood-red);
+    
+}
+
+#content {
+    margin-top:2rem;
+    padding:2rem;
+    width:40vw;
+    height:auto;
+    border-radius: 20px;
+    background-color: var(--champagne-gold);
+    justify-self: center;
+    display: flex;
+    flex-flow:column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap:2.5rem;
+}
+
+#content > div:nth-child(n + 3) {
+    background-color: var(--blood-red);
+    color:var(--warm-ivory);
+    width:70%;
+}
+
+#heading-container {
+    background-image: url("../imgs/scroll.png");
+    background-size: 100%;
+    background-repeat:no-repeat;
+    background-position: center;
+    height:300px;
+    width:100%;
+    text-align: center;
+    position:relative;
+}
+
+ h1 {
+    position:absolute;
+    top:40%;
+    overflow:wrap;
+    left:15%;
+}
