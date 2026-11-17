@@ -9,9 +9,13 @@ export default {
 	path: path.resolve(import.meta.dirname, "dist"),
 	clean: true,
     },
+    devtool: "eval-source-map",
+    devServer: {
+	watchFiles:["./src/template.html"],
+    },
     plugins: [
 	new HtmlWebpackPlugin({
-	    template:"./src/index.html",
+	    template:"./src/template.html",
 	}),
     ],
     module:{
@@ -22,7 +26,7 @@ export default {
 	    },
 	    {
 		test:/\.html$/i,
-		use:["html-loadr"],
+		use:["html-loader"],
 	    },
 	],
     }
