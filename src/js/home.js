@@ -14,20 +14,82 @@ export function homePage(){
         const star = document.createElement("img")
         star.src = michelinStars;
         star.width = 100;
-
+        star.alt = "Michelin Star"
+        star.classList.add("star");
         return star;
     }
 
     const starMainContainer = document.createElement("div");
+    starMainContainer.setAttribute("id","star-main-container");
+
     const starSubContainer = document.createElement("div");
-    const firstStar = makeStar();
-    const secondStar = makeStar();
-    const thirdStar = makeStar();
+    starSubContainer.setAttribute("id","star-sub-container");
+
+   
     const earningYear = document.createElement("p");
     earningYear.textContent = "Since 2077";
 
-    starSubContainer.append(firstStar,secondStar,thirdStar);
+    starSubContainer.append(makeStar(),makeStar(),makeStar());
     starMainContainer.append(starSubContainer,earningYear);
 
-    contentDiv.append( headingContainer,starMainContainer);
+    // Message Section
+    const messageContainer = document.createElement("div");
+    const message = document.createElement("p");
+
+    message.textContent = `Since 2066 we've been working tirelessly
+    to deliver to you nothing but the best food in the word.
+    11 years later our efforts have finally been recognized.
+    We Are The BEST Restaurant In The world!!`;
+
+    message.classList.add("achievement-message")
+    
+    const messageAuthor = document.createElement("p");
+    messageAuthor.classList.add("message-author");
+    messageAuthor.textContent = "- Best Chief In the World!";
+
+    messageContainer.append(message,messageAuthor);
+
+    //Hours Section
+    function makeHours(day,hours){
+        const hoursOpen = document.createElement("p");
+        hoursOpen.classList.add("hours");
+        hoursOpen.textContent = `${day}: 6pm - ${6 + hours}pm`;
+        return hoursOpen;
+    }
+    const hoursContainer = document.createElement("div");
+    hoursContainer.setAttribute("id","hours-container");
+    const hoursHeading = document.createElement("p");
+    hoursHeading.classList.add("heading");
+    hoursHeading.textContent = "Hours";
+
+    hoursContainer.append(
+        hoursHeading,
+        makeHours("Mon",4),
+        makeHours("Tues",4),
+        makeHours("Wed",5),
+        makeHours("Thurs",4),
+        makeHours("Fri",5),
+        makeHours("Sat",5),
+        makeHours("Sun",2),
+    )
+
+    //Location Section
+    const locationContainer = document.createElement("div");
+    locationContainer.setAttribute("id","location-container");
+
+    const locationHeading = document.createElement("p");
+    locationHeading.classList.add("heading");
+    locationHeading.textContent = "Location";
+
+    const location = document.createElement("p");
+    location.textContent = "1231, Restaurant Way, Night City";
+
+    locationContainer.append(locationHeading, location);
+
+    contentDiv.append( 
+        headingContainer,
+        starMainContainer,
+        messageContainer,
+        hoursContainer,
+        locationContainer);
  }
