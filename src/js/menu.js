@@ -1,4 +1,6 @@
 import wagyu from "../imgs/wagyu.jpeg";
+import lobster from "../imgs/lobster.jpeg";
+import eclipse from "../imgs/eclips.jpeg";
 
 export function menuPage() {
     const contentDiv = document.querySelector("#content");
@@ -14,6 +16,10 @@ export function menuPage() {
     const entree = document.createElement("h2");
     entree.classList.add("entree");
     entree.textContent = "Entrées"
+
+    const dessert = document.createElement("h2");
+    dessert.classList.add("dessert");
+    dessert.textContent = "Dessert";
 
     function makeMenuItem (price,item,picture,alt,description){
         const itemContainer = document.createElement("div");
@@ -44,6 +50,11 @@ export function menuPage() {
     }
 
     const wagyuDescription = `Japanese A5 Wagyu, black truffle, pomme purée, and a rich red-wine reduction.`;
+
+    const lobsterDescription = `Butter-poached lobster tail, saffron beurre blanc, caviar, and delicate edible flowers.`;
+
+    const eclipseDescription = `A ruby-red chocolate sphere filled with raspberry mousse, dark chocolate ganache, and edible gold leaf.`;
+
     contentDiv.append(
         headingContainer,
         entree,
@@ -54,5 +65,21 @@ export function menuPage() {
             "Imperial Wagyu",
             wagyuDescription
         ),
+        makeMenuItem (
+            240,
+            "Celestial Lobster",
+            lobster,
+            "Celestial Lobster",
+            lobsterDescription         
+        ),
+        dessert,
+        makeMenuItem (
+            95,
+            "Crimson Eclipse",
+            eclipse,
+            "Crimson Eclipse",
+            eclipseDescription
+        )
+
     )
 }
